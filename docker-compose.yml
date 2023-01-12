@@ -1,0 +1,13 @@
+version: "3"
+services:
+  localstack:
+    image: "localstack/localstack:0.14.0"
+    environment:
+      DEBUG: "1"
+      SERVICES: "sqs,sns"
+      DEFAULT_REGION: "eu-west-1"
+    ports:
+      - "4575:4575" #SNS port
+      - "4576:4576" #SQS port
+      - "4566:4566"
+
